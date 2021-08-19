@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Screen from "./Screen";
+import Lang from "./context";
+import translations from "./translations";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Lang defaultLang="en" translations={translations}>
+      <Screen />
+    </Lang>
+    // 그래서 이 Screen은 Provider로부터 어떤 data던지 가져올 수 있다.
   );
 }
 
